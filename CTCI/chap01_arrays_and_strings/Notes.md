@@ -40,3 +40,4 @@ for (String w : words) {
 System.out.println(sentence.toString());
 ```
 
+## HashMap vs HashTable
