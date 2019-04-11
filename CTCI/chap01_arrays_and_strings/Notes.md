@@ -29,6 +29,7 @@ Strings are immutable data types in Java. So appending to a string actually copi
  The number of character copies in total is  x + 2x + 3x + ... + nx = x (1 + 2 + 3 + ... + n) = x (n(n+1)/2) = x(n²).
 
 By using Java's StringBuilder, we basically have a mutable String. It creates a resizable array for a string and only copies when resizing the array.
+As we only copy the new string each time, complexity becomes O(x+x+x+.....x) = O(nx)
 
 Example:
 ```
@@ -39,3 +40,4 @@ for (String w : words) {
 System.out.println(sentence.toString());
 ```
 
+## HashMap vs HashTable
