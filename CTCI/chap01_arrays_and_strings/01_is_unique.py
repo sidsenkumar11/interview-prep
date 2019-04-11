@@ -47,6 +47,26 @@ def is_unique_two(string):
             return False
     return True
 
+"""
+---------
+Method 3
+---------
+
+Essentially do the same thing as Method 2, but simpler. 
+Also note small optimization: a string of length > 256 must have repeats.
+"""
+def is_unique_three(string):
+
+    if len(string) > 256:
+        return False
+
+    seen = [False] * 256
+    for x in string:
+        if seen[ord(x)]:
+            return False
+        seen[ord(x)] = True
+    return True
+
 if __name__ == '__main__':
 
     """
@@ -62,4 +82,7 @@ if __name__ == '__main__':
     print(*results, sep='\n')
     print('---------------------')
     results = list(map(lambda t: is_unique_two(t), tests))
+    print(*results, sep='\n')
+    print('---------------------')
+    results = list(map(lambda t: is_unique_three(t), tests))
     print(*results, sep='\n')
